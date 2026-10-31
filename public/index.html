@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>π dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>π</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <div class="brand"><span class="pi-mark">π</span> dashboard</div>
+        <button id="new-chat-btn" class="btn primary" title="Start a new chat">＋ New chat</button>
+      </div>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search sessions…" autocomplete="off" />
+      </div>
+      <div id="session-list" class="session-list"></div>
+      <div class="sidebar-foot">
+        <span id="session-count"></span>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header id="topbar">
+        <div class="topbar-left">
+          <label class="field">
+            <span class="field-label">Workspace</span>
+            <input id="workspace" list="workspace-list" placeholder="/path/to/project" spellcheck="false" />
+            <datalist id="workspace-list"></datalist>
+          </label>
+          <span id="session-title" class="session-title"></span>
+        </div>
+        <div class="topbar-right">
+          <label class="field">
+            <span class="field-label">Model</span>
+            <select id="model-select"></select>
+          </label>
+          <label class="field">
+            <span class="field-label">Thinking</span>
+            <select id="thinking-select"></select>
+          </label>
+          <span class="status"><span id="status-dot" class="dot"></span><span id="status-text">disconnected</span></span>
+          <button id="abort-btn" class="btn danger" disabled>■ Stop</button>
+        </div>
+      </header>
+
+      <div id="transcript" class="transcript">
+        <div id="empty-state" class="empty-state">
+          <div class="empty-logo">π</div>
+          <h2>pi dashboard</h2>
+          <p>Browse your session history on the left, or start a new chat.</p>
+          <p class="hint">Enter a workspace above, then hit <strong>New chat</strong> or just type below.</p>
+        </div>
+      </div>
+
+      <footer id="composer">
+        <textarea id="input" rows="1" placeholder="Message pi…  (Enter to send · Shift+Enter for a newline)" spellcheck="false"></textarea>
+        <button id="send-btn" class="btn primary" disabled>Send</button>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toasts"></div>
+  <script src="app.js"></script>
+</body>
+</html>

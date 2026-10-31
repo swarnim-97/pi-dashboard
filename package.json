@@ -1,0 +1,21 @@
+{
+  "name": "pi-dashboard",
+  "version": "1.0.0",
+  "description": "A local web GUI for pi — browse every pi session and run the agent from your browser.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "pi",
+    "coding-agent",
+    "gui",
+    "dashboard",
+    "rpc"
+  ],
+  "license": "MIT"
+}
